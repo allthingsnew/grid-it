@@ -1,4 +1,4 @@
-# Grid System
+# Grid It
 
 Provided is a stable (working) master copy of our in-house grid system. It's extremely easy to use for creating fast, robust resposive grids in HTML. It supports nested grids and doesn't require much CSS class tomfoolery to get things rolling. Base CSS classes are provided to use in the HTML markup along with SCSS mixins to use in your stylesheets offering the greatest amount of control.
 
