@@ -2,7 +2,7 @@
 
 Provided is a stable (working) master copy of our in-house grid system. It's extremely easy to use for creating fast, robust resposive grids in HTML. It supports nested grids and doesn't require much CSS class tomfoolery to get things rolling. Base CSS classes are provided to use in the HTML markup along with SCSS mixins to use in your stylesheets offering the greatest amount of control.
 
-The grid supports nested grids and needs no special, `first`, `last`, or `end` class names.
+The grid supports nested grids and needs no special, `.first`, `.last`, or `.end` classes!
 
 For examples of how the grid works and best practices see the provided style.scss and index.html files.
 
