@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import "grid";
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 100.01%;
+    line-height: 1.5em;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+h2, h3, h4 {
+    margin: 0 0 0.5em;
+}
+
+.row, .extended-row {  // usually you wouldn't style based on .row but a custom class name
+    border-bottom: solid 1px #ccc;
+    padding: 2em 0;
+
+    .row {
+        padding: 0;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// Examples of grid extensions
+.extended-row {
+    @include grid-row;
+}
+
+.extended-col {
+    &.first {
+        @include grid-col(3, $push: 6);
+    }
+
+    &.middle {
+        @include grid-col(6, $pull: 3);
+    }
+
+    &.last {
+        @include grid-col(3);
+    }
+}
+
+// Example of base font size change on media query
+@media screen and (min-width: 80em) {
+    body {
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 30em) {
+    body {
+        font-size: 0.875em;
+    }
+}
