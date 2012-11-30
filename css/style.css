@@ -18,9 +18,9 @@
     clear: both; }
   .row.half-gutter .col {
     padding: 0 0.5em; }
-  .row.collapse {
+  .row.collapsed {
     margin: 0; }
-    .row.collapse .col {
+    .row.collapsed .col {
       padding: 0; }
 
 .col {

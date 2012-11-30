@@ -150,7 +150,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
         }
     }
 
-    &.collapse {
+    &.collapsed {
         margin: 0;
 
         .#{$grid-col-class} {
