@@ -89,3 +89,15 @@ By using mixins you can tell any element in your project to look like a containe
     }
 
 **Tip**: Use [named arguments](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#keyword_arguments) to make including much easier.
+
+### Functions
+
+You can use the funtion `gridCalc()` anywhere you need to in your scss files. It is used as follows:
+
+    //**
+    //* Calculate the percentage width by column span.
+    //* @param  {num} $colNumber The number of columns to span
+    //* @param  {num} (optional) $totalColumns The number to divide into (defaults to $grid-cols)
+    //* @return {num} CSS Percentage
+    //*/
+    @function gridCalc($colNumber, $totalColumns: $grid-cols) {
