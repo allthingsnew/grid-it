@@ -14,7 +14,7 @@ Simply place the _grid.scss file somewhere in your project and import (near the 
 
 ### Variables
 
-The grid system comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. Do not edit the grid file itself.
+The grid system comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. **Do not edit the grid file itself.**
 
 Here are the variables you may modify with their default values:
 
