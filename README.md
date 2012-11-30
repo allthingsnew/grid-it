@@ -33,6 +33,7 @@ Here are the variables you may modify with their default values:
 * `.container`: The container inside which your entire grid will reside.
 * `.row`: The container to house columns.
 * `.col`: Any column gets this class in conjunction with one of the number classes below.
+
 *Note: these match the variables above.*
 
 **Row Extensions**
