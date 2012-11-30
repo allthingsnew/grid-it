@@ -34,6 +34,15 @@ Here are the variables you may modify with their default values:
 * `.row`: The container to house columns.
 * `.col`: Any column gets this class in conjunction with one of the number classes below.
 
+**Row Extensions**
+
+* `.half-gutter`: Renders all nested columns with half their gutter.
+* `.collapse`: Collapses all nested column gutters. (affects only columns with base column class)
+
+**Column Extensions**
+
+* `.centered`: Used with a single column to center it within a row.
+
 ### Base Column Sizes
 
 Column number classes from `.one` to as many as `.twentyfour` are provided (but will cap out at the number of columns the grid is set to). This would be used like so:
@@ -45,7 +54,7 @@ Column number classes from `.one` to as many as `.twentyfour` are provided (but 
 
 ### Offset
 
-If the case that you want to offset your columns by `x` number of columns you may use offset classes. These are prefixed with `offset-` and range from `.offset-1` up to `.offset-24`. However, they also are capped off at the number of columns the grid is set to.
+If the case that you want to offset your columns by `x` number of columns you may use offset classes. These range from `.offset-1` up to `.offset-24`. However, they also are capped off at the number of columns the grid is set to.
 
 ### Push & Pull
 
