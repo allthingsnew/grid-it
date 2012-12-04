@@ -123,7 +123,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 
     @if $columns < $grid-cols {  // assume this was included in a class
-    @media screen and (max-width: $grid-breakpoint) {
+    @media only screen and (max-width: $grid-breakpoint) {
         float: none;
         width: 100%;
         @if $offset > 0 { margin-left: 0; }
@@ -190,7 +190,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 }
 
 // full collapse
-@media screen and (max-width: $grid-breakpoint) {
+@media only screen and (max-width: $grid-breakpoint) {
     .#{$grid-col-class} {
         float: none;
         width: 100%;

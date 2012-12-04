@@ -172,7 +172,7 @@
 .pull-11 {
   right: 91.66667%; }
 
-@media screen and (max-width: 48em) {
+@media only screen and (max-width: 48em) {
   .col {
     float: none;
     width: 100%; }
@@ -229,7 +229,7 @@ h2, h3, h4 {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
-  @media screen and (max-width: 48em) {
+  @media only screen and (max-width: 48em) {
     .extended-col.first {
       float: none;
       width: 100%;
@@ -245,7 +245,7 @@ h2, h3, h4 {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
-  @media screen and (max-width: 48em) {
+  @media only screen and (max-width: 48em) {
     .extended-col.middle {
       float: none;
       width: 100%;
@@ -260,14 +260,14 @@ h2, h3, h4 {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
-  @media screen and (max-width: 48em) {
+  @media only screen and (max-width: 48em) {
     .extended-col.last {
       float: none;
       width: 100%; } }
 
-@media screen and (min-width: 80em) {
+@media only screen and (min-width: 80em) {
   body {
     font-size: 1.25em; } }
-@media screen and (max-width: 30em) {
+@media only screen and (max-width: 30em) {
   body {
     font-size: 0.875em; } }
