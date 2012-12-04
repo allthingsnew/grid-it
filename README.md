@@ -111,3 +111,10 @@ You can use the funtion `gridCalc()` anywhere you need to in your scss files. It
     @function gridCalc($colNumber, $totalColumns: $grid-cols) {
         //...
     }
+
+## Compatibility
+
+Good ol' IE will give you some fits. IE8 and lower doesn't support media queries. IE7 and lower doesn't support `box-sizing`. The fixes are pretty simple and straightfoward though.
+
+* Grab the resond.js polyfill to enable media queries [here](https://github.com/scottjehl/Respond).
+* Use the box-sizing behavior polyfill for IE7 and lower [here](https://github.com/Schepp/box-sizing-polyfill).
