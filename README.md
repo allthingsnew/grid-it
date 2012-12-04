@@ -60,24 +60,24 @@ In those instances when you may want to reverse the order of two columns *withou
 
 By using mixins you can tell any element in your project to look like a container, row, or column. Rows and columns come with some optional arguments. You may use them as follows:
 
-    /**
-     * Create a row out of any element.
-     * @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
-     * @param {bool} $collapse Remove the gutter on columns completely
-     */
+    //**
+    //* Create a row out of any element.
+    //* @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
+    //* @param {bool} $collapse Remove the gutter on columns completely
+    //*/
     @mixin grid-row($half-gutter: false, $collapse: false) {
         //...
     }
 
-    /**
-     * Create a column out of any element.
-     * @param {num} $grid-cols Number of columns the element should span (default is max)
-     * @param {num} $offset Number of columns the element should be offset by
-     * @param {num} $push Push the element by x number of columns
-     * @param {num} $pull Pull the element by x number of columns
-     * @param {bool} $centered Center the column in the row (there should only be one)
-     * @param {bool} $half-gutter Use only a half gutter on this specific column
-     */
+    //**
+    //* Create a column out of any element.
+    //* @param {num} $grid-cols Number of columns the element should span (default is max)
+    //* @param {num} $offset Number of columns the element should be offset by
+    //* @param {num} $push Push the element by x number of columns
+    //* @param {num} $pull Pull the element by x number of columns
+    //* @param {bool} $centered Center the column in the row (there should only be one)
+    //* @param {bool} $half-gutter Use only a half gutter on this specific column
+    //*/
     @mixin grid-col($columns: $grid-cols, $offset: 0, $push: 0, $pull: 0, $centered: false, $half-gutter: false) {
         //...
     }
