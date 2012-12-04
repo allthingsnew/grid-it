@@ -38,14 +38,17 @@ h2, h3, h4 {
 .extended-col {
     &.first {
         @include grid-col(3, $push: 6);
+        @include grid-mobile(1);
     }
 
     &.middle {
         @include grid-col(6, $pull: 3);
+        @include grid-mobile(1);
     }
 
     &.last {
         @include grid-col(3);
+        @include grid-mobile(2);
     }
 }
 

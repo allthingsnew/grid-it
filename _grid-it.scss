@@ -2,15 +2,17 @@
 // Grid Settings //
 ///////////////////
 
-$grid-cols: 12;  // [number] Number of columns in your grid
-$grid-container-gutter: 85%;  // [css unit] Overall width of the page in the browser
-$grid-max-width: 80em;  // [css unit] Maximum width of the page in the browser
-$grid-breakpoint: 48em;  // [css unit] Only built-in breakpoint of the grid (everything flattens)
-$grid-gutter: 2em;  // [css unit] Gutter between each column (negated on first and last columns)
-$grid-container-class: container;  // [string] Base class of the container element
-$grid-row-class: row;  // [string] Base class of each row
-$grid-col-class: col;  // [string] Base class of each column
-$grid-set-border-box: true;  // [bool] Set box-sizing on column classes (turn off if applied globally)
+$grid-cols: 12 !default;  // [number] Number of columns in your grid
+$grid-container-gutter: 85% !default;  // [css unit] Overall width of the page in the browser
+$grid-max-width: 80em !default;  // [css unit] Maximum width of the page in the browser
+$grid-breakpoint: 48em !default;  // [css unit] Only built-in breakpoint of the grid (everything flattens)
+$grid-gutter: 2em !default;  // [css unit] Gutter between each column (negated on first and last columns)
+$grid-container-class: container !default;  // [string] Base class of the container element
+$grid-row-class: row !default;  // [string] Base class of each row
+$grid-col-class: col !default;  // [string] Base class of each column
+$grid-mobile-class: mobile !default;  // [string] Base class for mobile grid (is appended with -#)
+$grid-mobile-cols: 4 !default;  // [number] Number of cols in mobile grid
+$grid-set-border-box: true !default;  // [bool] Set box-sizing on column classes (turn off if applied globally)
 
 // do not edit
 $grid-half-gutter: $grid-gutter / 2;
@@ -133,6 +135,17 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 }
 
+//**
+//* Add mobile grid to column.
+//* @param {num} $mobile-cols Number of columns to span on mobiles (default is max)
+//*/
+@mixin grid-mobile($mobile-cols: $grid-mobile-cols) {
+    @media only screen and (max-width: $grid-breakpoint) {
+        float: left;
+        width: gridCalc($mobile-cols, $grid-mobile-cols);
+    }
+}
+
 /////////////////
 // Grid Styles //
 /////////////////
@@ -189,19 +202,36 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 }
 
-// full collapse
+// mobile breakpoint
 @media only screen and (max-width: $grid-breakpoint) {
     .#{$grid-col-class} {
         float: none;
         width: 100%;
     }
+
+    // offset
     [class*="offset"] {
         margin-left: 0;
     }
+
+    // push
     [class*="push"] {
         left: auto;
     }
+
+    // pull
     [class*="pull"] {
         right: auto;
+    }
+
+    // mobile classes
+    [class*="mobile"] {
+        float: left;
+    }
+
+    @for $i from 1 through $grid-mobile-cols {
+        .#{$grid-mobile-class}-#{convertNumberToWord($i)} {
+            width: gridCalc($i, $grid-mobile-cols);
+        }
     }
 }

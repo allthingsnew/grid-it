@@ -20,6 +20,8 @@ Here are the variables you may modify with their default values:
     $grid-container-class: container;  // [string] Base class of the container element
     $grid-row-class: row;  // [string] Base class of each row
     $grid-col-class: col;  // [string] Base class of each column
+    $grid-mobile-class: mobile;  // [string] Base class for mobile grid (is appended with -#)
+    $grid-mobile-cols: 4;  // [number] Number of cols in mobile grid
     $grid-set-border-box: true;  // [bool] Set box-sizing on column classes (turn off if applied globally)
 
 ## Base Classes
@@ -47,6 +49,10 @@ Column number classes from `.one` to as many as `.twentyfour` are provided (but 
         <div class="eight col"></div>
         <div class="four col"></div>
     </div>
+
+## Mobile
+
+Mobile classes are provided to retain a grid on mobile/handheld devices. Otherwise, grid columns will collapse vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
 
 ## Offset
 
@@ -82,6 +88,14 @@ By using mixins you can tell any element in your project to look like a containe
         //...
     }
 
+    //**
+    //* Add mobile grid to column.
+    //* @param {num} $mobile-cols Number of columns to span on mobiles (default is max)
+    //*/
+    @mixin grid-mobile($mobile-cols: $grid-mobile-cols) {
+        //...
+    }
+
 **Tip**: Use [named arguments](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#keyword_arguments) to make including much easier.
 
 ## Functions
@@ -95,5 +109,5 @@ You can use the funtion `gridCalc()` anywhere you need to in your scss files. It
     //* @return {num} CSS Percentage
     //*/
     @function gridCalc($colNumber, $totalColumns: $grid-cols) {
-        // ...
+        //...
     }
