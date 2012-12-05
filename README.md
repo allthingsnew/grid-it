@@ -12,6 +12,7 @@ The grid system comes highly configurable from the number of columns to gutters 
 
 Here are the variables you may modify with their default values:
 
+    ```scss
     $grid-cols: 12;  // [number] Number of columns in your grid
     $grid-container-gutter: 85%;  // [css unit] Overall width of the page in the browser
     $grid-max-width: 80em;  // [css unit] Maximum width of the page in the browser
@@ -23,6 +24,7 @@ Here are the variables you may modify with their default values:
     $grid-mobile-class: mobile;  // [string] Base class for mobile grid (is appended with -#)
     $grid-mobile-cols: 4;  // [number] Number of cols in mobile grid
     $grid-set-border-box: true;  // [bool] Set box-sizing on column classes (turn off if applied globally)
+    ```
 
 ## Base Classes
 
@@ -45,10 +47,12 @@ Here are the variables you may modify with their default values:
 
 Column number classes from `.one` to as many as `.twentyfour` are provided (but will cap out at the number of columns the grid is set to). This would be used like so:
 
+    ```html
     <div class="row">
         <div class="eight col"></div>
         <div class="four col"></div>
     </div>
+    ```
 
 ## Mobile
 
@@ -66,6 +70,7 @@ In those instances when you may want to reverse the order of two columns *withou
 
 By using mixins you can tell any element in your project to look like a container, row, or column. Rows and columns come with some optional arguments. You may use them as follows:
 
+    ```scss
     //**
     //* Create a row out of any element.
     //* @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
@@ -95,6 +100,7 @@ By using mixins you can tell any element in your project to look like a containe
     @mixin grid-mobile($mobile-cols: $grid-mobile-cols) {
         //...
     }
+    ```
 
 **Tip**: Use [named arguments](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#keyword_arguments) to make including much easier.
 
@@ -102,6 +108,7 @@ By using mixins you can tell any element in your project to look like a containe
 
 You can use the funtion `gridCalc()` anywhere you need to in your scss files. It is used as follows:
 
+    ```scss
     //**
     //* Calculate the percentage width by column span.
     //* @param  {num} $colNumber The number of columns to span
@@ -111,6 +118,7 @@ You can use the funtion `gridCalc()` anywhere you need to in your scss files. It
     @function gridCalc($colNumber, $totalColumns: $grid-cols) {
         //...
     }
+    ```
 
 ## Compatibility
 
