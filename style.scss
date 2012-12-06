@@ -3,9 +3,7 @@
 @import "grid-it";
 
 body {
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 100.01%;
-    line-height: 1.5em;
+    font: 100%/1.5 "Helvetica Neue", sans-serif;
 }
 
 h1 {
@@ -55,12 +53,12 @@ h2, h3, h4 {
 // Example of base font size change on media query
 @media only screen and (min-width: 80em) {
     body {
-        font-size: 1.25em;
+        font-size: 125%;
     }
 }
 
 @media only screen and (max-width: 30em) {
     body {
-        font-size: 0.875em;
+        font-size: 87.5%;
     }
 }
