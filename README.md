@@ -72,6 +72,13 @@ By using mixins you can tell any element in your project to look like a containe
 
 ```scss
 //**
+//* Create a container out of any element.
+//*/
+@mixin grid-container {
+    //...
+}
+
+//**
 //* Create a row out of any element.
 //* @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
 //* @param {bool} $collapse Remove the gutter on columns completely
@@ -94,6 +101,15 @@ By using mixins you can tell any element in your project to look like a containe
 }
 
 //**
+//* Create column widths, offset, push, and pull classes within a given context.
+//* @param {num} $num-cols The number of columns to build classes to
+//* @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
+//*/
+@mixin grid-classes($num-cols: $grid-cols, $prepend: false) {
+    //...
+}
+
+//**
 //* Add mobile grid to column.
 //* @param {num} $mobile-cols Number of columns to span on mobiles (default is max)
 //*/
@@ -103,6 +119,17 @@ By using mixins you can tell any element in your project to look like a containe
 ```
 
 **Tip**: Use [named arguments](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#keyword_arguments) to make including much easier.
+
+## Semantic Media Queries
+
+You may extend the grid breakpoint included here by creating your own media queries and then building the grid classes within those queries using different grids. To accomplish this utilize the `grid-classes` mixin like so:
+
+```scss
+// Creates a new 16-column grid with classes ranging from .bp2-one to .bp2-sixteen
+@media only screen and (max-width: 60em) {
+    @include grid-classes(16, bp2);
+}
+```
 
 ## Functions
 

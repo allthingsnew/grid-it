@@ -61,6 +61,9 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 }
 
+//**
+//* Create a container out of any element.
+//*/
 @mixin grid-container {
     margin: 0 auto;
     width: $grid-container-gutter;
@@ -136,6 +139,37 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 }
 
 //**
+//* Create column widths, offset, push, and pull classes within a given context.
+//* @param {num} $num-cols The number of columns to build classes to
+//* @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
+//*/
+@mixin grid-classes($num-cols: $grid-cols, $prepend: false) {
+    @if $prepend { $prepend: $prepend + "-"; }
+    @else { $prepend: ""; }
+
+    // col widths
+    @for $i from 1 through $num-cols {
+        .#{$prepend}#{convertNumberToWord($i)} {
+            width: gridCalc($i, $num-cols);
+        }
+    }
+
+    // offsets, pushes, pulls
+    @for $i from 1 through $num-cols - 1 {
+        $prec: gridCalc($i, $num-cols);
+        .#{$prepend}offset-#{$i} {
+            margin-left: $prec;
+        }
+        .#{$prepend}push-#{$i} {
+            left: $prec;
+        }
+        .#{$prepend}pull-#{$i} {
+            right: $prec;
+        }
+    }
+}
+
+//**
 //* Add mobile grid to column.
 //* @param {num} $mobile-cols Number of columns to span on mobiles (default is max)
 //*/
@@ -182,24 +216,10 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 }
 
 // column classes
-@for $i from 1 through $grid-cols {
-    .#{convertNumberToWord($i)} {
-        width: gridCalc($i);
-    }
-}
+@include grid-classes;
 
-// offsets, pushes, pulls
-@for $i from 1 through $grid-cols - 1 {
-    $prec: gridCalc($i);
-    .offset-#{$i} {
-        margin-left: $prec;
-    }
-    .push-#{$i} {
-        left: $prec;
-    }
-    .pull-#{$i} {
-        right: $prec;
-    }
+.#{$grid-mobile-class}-show {
+    display: none;
 }
 
 // mobile breakpoint
@@ -225,12 +245,17 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 
     // mobile classes
-    [class*="mobile"] {
-        float: left;
+    .#{$grid-mobile-class}-show {
+        display: inherit;
+    }
+
+    .#{$grid-mobile-class}-hide {
+        display: none;
     }
 
     @for $i from 1 through $grid-mobile-cols {
         .#{$grid-mobile-class}-#{convertNumberToWord($i)} {
+            float: left;
             width: gridCalc($i, $grid-mobile-cols);
         }
     }
