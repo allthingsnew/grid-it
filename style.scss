@@ -4,6 +4,29 @@
 
 body {
     font: 100%/1.5 "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    border-bottom: solid 1px #ccc;
+    background-color: #eee;
+
+    .row {
+        padding: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.625em;
+    padding: 1em 0;
+}
+
+.dark {
+    height: 2em;
+    color: #fff;
+    background-color: #333;
 }
 
 h1 {
@@ -13,6 +36,10 @@ h1 {
 
 h2, h3, h4 {
     margin: 0 0 0.5em;
+}
+
+p {
+    margin: 1em 0;
 }
 
 .row, .extended-row {  // usually you wouldn't style based on .row but a custom class name
@@ -47,6 +74,25 @@ h2, h3, h4 {
     &.last {
         @include grid-col(3);
         @include grid-mobile(2);
+    }
+}
+
+.centered {
+    text-align: center;
+}
+
+.block {
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    padding: 1em;
+    background-color: #eee;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
     }
 }
 

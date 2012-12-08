@@ -117,7 +117,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     @if $offset > 0 { margin-left: gridCalc($offset); }
     width: gridCalc($columns);
     // half gutter
-    @if $half-gutter { padding: 0 ($grid-quarter-gutter); }
+    @if $half-gutter { padding: 0 $grid-quarter-gutter; }
     @else { padding: 0 $grid-half-gutter; }
     // ensure box-sizing
     @if $grid-set-border-box {
