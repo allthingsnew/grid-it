@@ -226,6 +226,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 @media only screen and (max-width: $grid-breakpoint) {
     .#{$grid-col-class} {
         float: none;
+        clear: both;
         width: 100%;
     }
 
