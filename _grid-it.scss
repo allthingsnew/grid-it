@@ -257,6 +257,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     @for $i from 1 through $grid-mobile-cols {
         .#{$grid-mobile-class}-#{convertNumberToWord($i)} {
             float: left;
+            clear: none;
             width: gridCalc($i, $grid-mobile-cols);
         }
     }
