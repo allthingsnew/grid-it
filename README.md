@@ -16,14 +16,14 @@ Here are the variables you may modify with their default values:
 $grid-cols: 12;  // [number] Number of columns in your grid
 $grid-container-gutter: 85%;  // [css unit] Overall width of the page in the browser
 $grid-max-width: 80em;  // [css unit] Maximum width of the page in the browser
-$grid-breakpoint: 48em;  // [css unit] Only built-in breakpoint of the grid (everything flattens)
+$grid-breakpoint: 47em;  // [css unit] Only built-in breakpoint of the grid (everything flattens)
 $grid-gutter: 2em;  // [css unit] Gutter between each column (negated on first and last columns)
 $grid-container-class: container;  // [string] Base class of the container element
 $grid-row-class: row;  // [string] Base class of each row
 $grid-col-class: col;  // [string] Base class of each column
 $grid-mobile-class: mobile;  // [string] Base class for mobile grid (is appended with -#)
 $grid-mobile-cols: 4;  // [number] Number of cols in mobile grid
-$grid-set-border-box: true;  // [bool] Set box-sizing on column classes (turn off if applied globally)
+$grid-set-border-box: false !default;  // [bool] Set box-sizing on column classes (assumes applied globally by default)
 ```
 
 ## Base Classes
