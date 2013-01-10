@@ -219,7 +219,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 @include grid-classes;
 
 .#{$grid-mobile-class}-show {
-    display: none;
+    display: none !important;
 }
 
 // mobile breakpoint
@@ -247,11 +247,11 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 
     // mobile classes
     .#{$grid-mobile-class}-show {
-        display: inherit;
+        display: inherit !important;
     }
 
     .#{$grid-mobile-class}-hide {
-        display: none;
+        display: none !important;
     }
 
     @for $i from 1 through $grid-mobile-cols {
