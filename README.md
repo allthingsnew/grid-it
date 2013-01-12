@@ -4,7 +4,7 @@ Provided is a stable (working) master copy of our in-house grid system. It's ext
 
 The grid supports nested grids and needs no special, `.first`, `.last`, or `.end` classes!
 
-For examples of how the grid works and best practices see the provided style.scss and index.html files.
+For examples of how the grid works and best practices see the provided `style.scss` and `index.html` files.
 
 ## Variables
 
@@ -58,13 +58,13 @@ Column number classes from `.one` to as many as `.twentyfour` are provided (but 
 
 Mobile classes are provided to retain a grid on mobile/handheld devices. Otherwise, grid columns will collapse vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
 
-## Offset
+## Offsets
 
 If the case that you want to offset your columns by `x` number of columns you may use offset classes. These range from `.offset-1` up to `.offset-24`. However, they also are capped off at the number of columns the grid is set to.
 
-## Push & Pull
+## Source Ordering
 
-In those instances when you may want to reverse the order of two columns *without* editting the markup push and pull classes are provided. These are just like offset in syntax, again ranging from `.push-1` and `.pull-1` to `.push-24` and `.pull-24`, capping off at the number of columns you set your grid.
+If when you want to rearrange the order of columns independent of the markup push and pull classes are provided. These are just like offset in syntax, again ranging from `.push-1` and `.pull-1` to `.push-24` and `.pull-24`, capping off at the number of columns you set your grid.
 
 ## Mixins
 
