@@ -175,6 +175,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 @mixin grid-mobile($mobile-cols: $grid-mobile-cols) {
     @media only screen and (max-width: $grid-breakpoint) {
         float: left;
+        clear: none;
         width: gridCalc($mobile-cols, $grid-mobile-cols);
     }
 }
