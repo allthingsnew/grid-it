@@ -150,6 +150,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     @for $i from 1 through $num-cols {
         .#{$prepend}#{convertNumberToWord($i)} {
             width: gridCalc($i, $num-cols);
+            @content;
         }
     }
 
@@ -254,11 +255,8 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
         display: none !important;
     }
 
-    @for $i from 1 through $grid-mobile-cols {
-        .#{$grid-mobile-class}-#{convertNumberToWord($i)} {
-            float: left;
-            clear: none;
-            width: gridCalc($i, $grid-mobile-cols);
-        }
+    @include grid-classes($grid-mobile-cols, $grid-mobile-class) {
+        float: left;
+        clear: none;
     }
 }
