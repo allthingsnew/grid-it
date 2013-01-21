@@ -205,7 +205,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     }
 }
 
-.#{$grid-col-class} {
+.#{$grid-col-class}, .#{$grid-col-class}s {
     @include grid-col;
 
     &.centered {
@@ -223,7 +223,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 
 // mobile breakpoint
 @media only screen and (max-width: $grid-breakpoint) {
-    .#{$grid-col-class} {
+    .#{$grid-col-class}, .#{$grid-col-class}s {
         float: none;
         clear: both;
         width: 100%;
