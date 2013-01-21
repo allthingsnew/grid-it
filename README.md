@@ -30,9 +30,9 @@ $grid-set-border-box: false !default;  // [bool] Set box-sizing on column classe
 
 * `.container`: The container inside which your entire grid will reside.
 * `.row`: The container to house columns.
-* `.col`: Any column gets this class in conjunction with one of the number classes below.
+* `.col`, `.cols`: Any column gets this class in conjunction with one of the number classes below.
 
-*Note: these match the variables above.*
+*Note: these will match the names set in the variables above.*
 
 **Row Extensions**
 
@@ -49,14 +49,10 @@ Column number classes from `.one` to as many as `.twentyfour` are provided (but 
 
 ```html
 <div class="row">
-    <div class="eight col"></div>
-    <div class="four col"></div>
+    <div class="eight cols"></div>
+    <div class="four cols"></div>
 </div>
 ```
-
-## Mobile
-
-Mobile classes are provided to retain a grid on mobile/handheld devices. Otherwise, grid columns will collapse vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
 
 ## Offsets
 
@@ -65,6 +61,12 @@ If the case that you want to offset your columns by `x` number of columns you ma
 ## Source Ordering
 
 If when you want to rearrange the order of columns independent of the markup push and pull classes are provided. These are just like offset in syntax, again ranging from `.push-1` and `.pull-1` to `.push-24` and `.pull-24`, capping off at the number of columns you set your grid.
+
+## Mobile
+
+Mobile classes are provided to retain a grid on mobile/handheld devices. Otherwise, grid columns will collapse vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
+
+You may also use mobile offsets and source ordering in the same manner as above. Mobile versions are prepended, like the number classes, with `mobile-` so these classes are like: `.mobile-offset-3`, `.mobile-push-4`, and `.mobile-pull-8`.
 
 ## Mixins
 
@@ -101,20 +103,21 @@ By using mixins you can tell any element in your project to look like a containe
 }
 
 //**
-//* Create column widths, offset, push, and pull classes within a given context.
-//* @param {num} $num-cols The number of columns to build classes to
-//* @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
-//*/
-@mixin grid-classes($num-cols: $grid-cols, $prepend: false) {
-    //...
-}
-
-//**
 //* Add mobile grid to column.
 //* @param {num} $mobile-cols Number of columns to span on mobiles (default is max)
 //*/
 @mixin grid-mobile($mobile-cols: $grid-mobile-cols) {
     //...
+}
+
+//**
+//* Create column widths, offset, push, and pull classes within a given context.
+//* @param {num} $num-cols The number of columns to build classes to
+//* @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
+//*/
+@mixin grid-classes($num-cols: $grid-cols, $prepend: false) {
+    // any styles here are appended to each number class in the grid allowing for
+    // deep customization of your grids.
 }
 ```
 
@@ -122,7 +125,7 @@ By using mixins you can tell any element in your project to look like a containe
 
 ## Semantic Media Queries
 
-You may extend the grid breakpoint included here by creating your own media queries and then building the grid classes within those queries using different grids. To accomplish this utilize the `grid-classes` mixin like so:
+You may extend the grid breakpoint included here by creating your own media queries and then building the grid classes within those queries using different grid schemas. To accomplish this utilize the `grid-classes` mixin like so:
 
 ```scss
 // Creates a new 16-column grid with classes ranging from .bp2-one to .bp2-sixteen
