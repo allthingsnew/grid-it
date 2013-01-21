@@ -85,7 +85,6 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     @if $collapse { margin: 0; &>*{ padding: 0; }; }
     @else { margin: 0 -#{$grid-half-gutter}; }
     width: auto;
-    overflow: hidden;
     @include clearfix;
 
     @if $half-gutter {
