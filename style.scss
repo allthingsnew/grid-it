@@ -17,14 +17,14 @@ $ms: 0.618 0.742 1 1.201 1.618 1.942 2.618 3.143;
 }
 
 body {
-    font: 100%/1.5 "Helvetica Neue", sans-serif;
+    font: 87.5%/1.5 "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 87.5%;  // 14px
 }
 
 header {
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 2px #ccc;
+    text-align: center;
     background-color: #eee;
 
     .row {
@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     margin-top: 0.5em;
-    text-align: center;
     text-shadow: 1px 1px 1px #ccc;
 }
 
@@ -117,18 +116,5 @@ p {
 
     :last-child {
         margin-bottom: 0;
-    }
-}
-
-// Example of base font size change on media query
-@media only screen and (max-width: 80em) {
-    body {
-        // font-size: 125%;
-    }
-}
-
-@media only screen and (max-width: 30em) {
-    body {
-        font-size: 75%;
     }
 }
