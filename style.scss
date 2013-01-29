@@ -65,7 +65,7 @@ p {
     margin: 1em 0;
 }
 
-.row, .extended-row {  // usually you wouldn't style based on .row but a custom class name
+.row {  // usually you wouldn't style based on .row but a custom class name
     border-bottom: solid 1px #ccc;
     padding: 2em 0;
 
@@ -79,25 +79,23 @@ p {
 }
 
 // Examples of grid extensions
-.extended-row {
-    @include grid-row;
+.semantic-row {
+    border-bottom: solid 1px #ccc;
+    padding: 2em 0;
+
+    @include grid-row($has-mobile: true);
 }
 
-.extended-col {
-    &.first {
-        @include grid-col(3, $push: 6);
-        @include grid-mobile(1);
-    }
+.first-column {
+    @include grid-col(3, $push: 6, $mobile-cols: 1);
+}
 
-    &.middle {
-        @include grid-col(6, $pull: 3);
-        @include grid-mobile(1);
-    }
+.middle-column {
+    @include grid-col(6, $pull: 3, $mobile-cols: 1);
+}
 
-    &.last {
-        @include grid-col(3);
-        @include grid-mobile(2);
-    }
+.last-column {
+    @include grid-col(3, $mobile-cols: 2);
 }
 
 .centered {
