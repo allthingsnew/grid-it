@@ -69,16 +69,14 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 //*/
 @mixin grid-container($media: true) {
     @if $grid-container-expand == false {
-        margin: 0 auto;
-        width: $grid-container-width;
+        padding: 0 $grid-gutter;
     }
     
     @if $media {
         @media only screen and (min-width: $grid-breakpoint) {
-            @if $grid-container-expand {
-                margin: 0 auto;
-                width: $grid-container-width;
-            }
+            margin: 0 auto;
+            width: $grid-container-width;
+            @if $grid-container-expand == false { padding: 0; }
             max-width: $grid-max-width;
         }
     }
@@ -255,11 +253,10 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
         }
     }
 
-    @if $grid-container-expand {
-        .#{$grid-container-class} {
-            margin: 0 auto;
-            width: $grid-container-width;
-        }
+    .#{$grid-container-class} {
+        margin: 0 auto;
+        width: $grid-container-width;
+        @if $grid-container-expand == false { padding: 0; }
     }
 
     .#{$grid-row-class} {
