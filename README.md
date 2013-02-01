@@ -1,8 +1,11 @@
 # Grid It
 
-Provided is a stable (working) master copy of our in-house grid system. It's extremely easy to use for creating fast, robust resposive grids in HTML. It supports nested grids and doesn't require much CSS class tomfoolery to get things rolling. Base CSS classes are provided to use in the HTML markup along with SCSS mixins to use in your stylesheets offering the greatest amount of control.
+Grid-It is a grid system built from the best practices of several other grid systems. It benefits from using the best points of other CSS grid philosophies without being tied to their complete systems. This grid system rests on the following strengths:
 
-The grid supports nested grids and needs no special, `.first`, `.last`, or `.end` classes!
+* Border Box Sizing
+* Mobile-First Development
+* Fixed Gutters Based on Font Size
+* Full Semantic Control
 
 For examples of how the grid works and best practices see the provided `style.scss` and `index.html` files.
 
@@ -89,9 +92,11 @@ If when you want to rearrange the order of columns independent of the markup use
 
 ## Mobile
 
-Mobile classes are provided to retain a grid on mobile/handheld devices. Otherwise, grid columns are collapsed vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
+Mobile classes are provided to produce a grid on mobile/handheld devices. Otherwise, grid columns are collapsed vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
 
 You may also use mobile offsets and source ordering in the same manner as above. Mobile versions are prepended, like the number classes, with `mobile-` so these classes are like: `.mobile-offset-3`, `.mobile-push-4`, and `.mobile-pull-8`.
+
+From time to time different column groups are also needed between mobile and desktop grids. For this reason `.mobile-row` is provided. This is a class given to elements that wrap mobile columns and looks like a row on mobile but becomes lax on after the grid breakpoint. Nest these elements within common rows to achieve complex grid grouping.
 
 ## Semantics
 
