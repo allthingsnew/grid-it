@@ -6,7 +6,7 @@ $grid-cols: 12 !default;  // [number] Number of columns in your grid
 $grid-container-width: 85% !default;  // [css unit] Overall width of the page in the browser
 $grid-max-width: 80em !default;  // [css unit] Maximum width of the page in the browser
 $grid-breakpoint: 47em !default;  // [css unit] Only built-in breakpoint of the grid (everything flattens)
-$grid-gutter: 2em !default;  // [css unit] Gutter between each column (negated on first and last columns)
+$grid-gutter: 1em !default;  // [css unit] Gutter between each column (negated on first and last columns)
 $grid-container-class: container !default;  // [string] Base class of the container element
 $grid-container-expand: false !default;  // [bool] Should containers expand to full-width on mobile
 $grid-row-class: row !default;  // [string] Base class of each row
