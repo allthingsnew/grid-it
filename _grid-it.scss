@@ -187,15 +187,15 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 
     // offsets, pushes, pulls
     @for $i from 1 through $num-cols - 1 {
-        $prec: gridCalc($i, $num-cols);
+        $perc: gridCalc($i, $num-cols);
         .#{$prepend}offset-#{$i} {
-            margin-left: $prec;
+            margin-left: $perc;
         }
         .#{$prepend}push-#{$i} {
-            left: $prec;
+            left: $perc;
         }
         .#{$prepend}pull-#{$i} {
-            right: $prec;
+            right: $perc;
         }
     }
 }
