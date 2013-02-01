@@ -130,7 +130,7 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 
 //
 // Create a column out of any element.
-// @param {num} $grid-cols Number of columns the element should span (default is max)
+// @param {num} $columns Number of columns the element should span (default is max)
 // @param {num} $offset Number of columns the element should be offset by
 // @param {num} $push Push the element by x number of columns
 // @param {num} $pull Pull the element by x number of columns

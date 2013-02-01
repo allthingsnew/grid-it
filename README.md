@@ -37,7 +37,7 @@ $grid-container-expand: false;
 // Base class of each row
 $grid-row-class: row;
 
-// Base class of each column
+// Base class of each column (is also pluralized)
 $grid-col-class: col;
 
 // Base class for mobile grid (is appended with -#)
@@ -99,28 +99,35 @@ Grid-It is a semantic grid, meaning that while it comes packed with every class 
 
 ```scss
 // Create a container out of any element.
+
 @include grid-container;
+
 
 // Create a row out of any element.
 // @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
 // @param {bool} $collapse Remove the gutter on columns completely
 // @param {bool} $has-mobile Whether or not the row contains mobile columns
-@include grid-row($half-gutter: false, $collapse: false, $has-mobile: false);
+
+@include grid-row();
+
 
 // Create a column out of any element.
-// @param {num} $grid-cols Number of columns the element should span
+// @param {num} $columns Number of columns the element should span (required)
 // @param {num} $offset Number of columns the element should be offset by
 // @param {num} $push Push the element by x number of columns
 // @param {num} $pull Pull the element by x number of columns
 // @param {bool} $centered Center the column in the row (there should only be one)
 // @param {bool} $half-gutter Use only a half gutter on this specific column
 // @param {num} $mobile-cols Number of columns to span on mobile, if any
-@include grid-col($columns: $grid-cols, $offset: 0, $push: 0, $pull: 0, $centered: false, $half-gutter: false, $mobile-cols: 0);
+
+@include grid-col($columns);
+
 
 // Create column widths, offset, push, and pull classes within a given context.
-// @param {num} $num-cols The number of columns to build classes to
+// @param {num} $num-cols The number of columns to build classes to (required)
 // @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
-@include grid-classes($num-cols: $grid-cols, $prepend: false) {
+
+@include grid-classes($num-cols) {
     // any styles here are appended to each number class in the grid
 }
 ```
