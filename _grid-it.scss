@@ -80,8 +80,8 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
     @if $media {
         @media only screen and (min-width: $grid-breakpoint) {
             margin: 0 auto;
-            width: $grid-container-width;
-            max-width: $grid-max-width;
+            width: $grid-max-width;
+            max-width: $grid-container-width;
             @if $grid-container-expand {
                 overflow: visible;
             }
@@ -266,7 +266,8 @@ $grid-quarter-gutter: $grid-half-gutter / 2;
 
     .#{$grid-container-class} {
         margin: 0 auto;
-        width: $grid-container-width;
+        width: $grid-max-width;
+        max-width: $grid-container-width;
         @if $grid-container-expand {
             overflow: visible;
         }
