@@ -1,2 +1,5 @@
-/.DS_Store
-/css
+.DS_Store
+._*
+Thumbs.db
+*.css
+.sass-cache
