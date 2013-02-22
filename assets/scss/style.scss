@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+$lightBlue: #369;
+$darkBlue: #00406e;
+
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -20,7 +23,7 @@ body {
     font: 87.5%/1.5 "Helvetica Neue", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-rendering: optimizeLegibility;
     font-weight: bold;
-    color: #369;
+    color: $lightBlue;
 }
 
 @for $i from 1 through 6 {
@@ -41,7 +44,7 @@ header {
     border-bottom: solid 2px #3cc;
     text-align: center;
     text-shadow: 1px 1px 0 #000;
-    background-color: #369;
+    background-color: $lightBlue;
 
     hgroup {
         padding: 3em 0;
@@ -67,7 +70,7 @@ footer {
     font-size: 0.625em;
     padding: 1em 0;
     color: #fff;
-    background-color: #369;
+    background-color: $lightBlue;
 }
 
 hr {
@@ -84,7 +87,7 @@ hr {
 .dark {
     min-height: 2em;
     color: #fff;
-    background-color: #306;
+    background-color: $darkBlue;
 }
 
 p {
