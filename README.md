@@ -1,6 +1,6 @@
 # [Grid-It v2.0.2](http://allthingsnew.github.com/grid-it/)
 
-Grid-It is a CSS grid system built from the best practices of several other grid systems. It benefits from using the best points of other CSS grid philosophies without being tied to their complete systems. It aims at being as lightweight as possible and as powerful as possible. Grid-It rests on the following strengths:
+Grid-It is a CSS3 grid system built from the best practices of several other grid systems. It benefits from using the mold-breaking features of other CSS grids without being tied to their individual frameworks or philosophies. It aims at remaining as lightweight, powerful, and yet customizable as possible. Grid-It features:
 
 * Border Box Sizing
 * Mobile-First Development
@@ -24,7 +24,9 @@ Grid-It is contained in a single Sass file! Just place `_grid-it.scss` in your p
 
 ## Variables
 
-Grid-It comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. *Do not edit the grid file itself so you can update easily.*
+Grid-It comes highly configurable. For example, even though Grid-It is based on certain philosophical approaches to layout like fixed gutters relative to the base font size it can be set to use elastic gutters. Virtually everything is customizable out of the box.
+
+To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. *Do not edit the grid file itself so you can update easily.*
 
 Here are the variables you may modify with their default values:
 
