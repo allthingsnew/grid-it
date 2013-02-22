@@ -8,6 +8,8 @@ $darkBlue: #00406e;
        -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
             box-sizing: border-box;
+            // fixes IE7 and lower
+            *behavior: url(../js/boxsizing.htc);
 }
 
 @import "grid-it";
