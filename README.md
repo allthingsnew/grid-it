@@ -1,17 +1,25 @@
-# Grid It
+# [Grid-It v2.0.2](http://allthingsnew.github.com/grid-it/)
 
-Grid-It is a grid system built from the best practices of several other grid systems. It benefits from using the best points of other CSS grid philosophies without being tied to their complete systems. This grid system rests on the following strengths:
+Grid-It is a CSS grid system built from the best practices of several other grid systems. It benefits from using the best points of other CSS grid philosophies without being tied to their complete systems. It aims at being as lightweight as possible and as powerful as possible. Grid-It rests on the following strengths:
 
 * Border Box Sizing
 * Mobile-First Development
 * Fixed Gutters Based on Font Size
 * Full Semantic Control
 
-For examples of how the grid works and best practices see the provided `style.scss` and `index.html` files.
+## Installation & Usage
+
+To get started do one of the following:
+
+* [Download the current version here.](https://github.com/allthingsnew/grid-it/archive/2.0.2.zip)
+* Clone this repo: `git clone git://github.com/allthingsnew/grid-it.git`
+* Fork our repo and play with it!
+
+Grid-It is contained in a single Sass file! Just place `_grid-it.scss` in your project directory and import it before your grid classes. Edit the default settings by writing the applicable variables in your project before including Grid-It.
 
 ## Variables
 
-The grid system comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. **Do not edit the grid file itself.**
+Grid-It comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. **Do not edit the grid file itself.**
 
 Here are the variables you may modify with their default values:
 
@@ -169,9 +177,25 @@ Also provided is a mixin to clearfix elements. Simply use it like:
 @include clearfix;
 ```
 
-## Compatibility
+## Browser Compatibility
 
-Good ol' IE will give you some fits. IE8 and lower doesn't support media queries. IE7 and lower doesn't support `box-sizing`. The fixes are pretty simple and straightfoward though.
+Legacy IE will throw some fits. IE8 and lower doesn't support media queries. IE7 and lower doesn't support `box-sizing`. The fixes are pretty simple and straightfoward though.
 
-* Grab the resond.js polyfill to enable media queries [here](https://github.com/scottjehl/Respond).
-* Use the box-sizing behavior polyfill for IE7 and lower [here](https://github.com/Schepp/box-sizing-polyfill).
+* Grab the [resond.js polyfill](https://github.com/scottjehl/Respond) to enable media queries (IE8).
+* Use the [box-sizing behavior polyfill](https://github.com/Schepp/box-sizing-polyfill) for IE7 and lower.
+
+## Copyright & Licenses
+
+Copyright 2013 Multiversal Enterprises, LLC.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this work except in compliance with the License.
+You may obtain a copy of the License in the LICENSE file, or at:
+
+  [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
