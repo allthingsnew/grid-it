@@ -4,8 +4,11 @@ Grid-It is a CSS grid system built from the best practices of several other grid
 
 * Border Box Sizing
 * Mobile-First Development
-* Fixed Gutters Based on Font Size
+* Flexible, Responsive Layouts
+* Fixed Gutters Relative to Font Size
+* Nested Grids
 * Full Semantic Control
+* Extendable Grids
 
 To see Grid-It in action be sure to check out our [demo page](http://allthingsnew.github.com/grid-it/).
 
@@ -21,24 +24,24 @@ Grid-It is contained in a single Sass file! Just place `_grid-it.scss` in your p
 
 ## Variables
 
-Grid-It comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. **Do not edit the grid file itself.**
+Grid-It comes highly configurable from the number of columns to gutters to the base classes to be used. To alter these settings always copy the variables in your own settings/variables file *before* importing the grid. *Do not edit the grid file itself so you can update easily.*
 
 Here are the variables you may modify with their default values:
 
 | Variable Name | Default Value | Description |
 | ------------- | ------------- | ----------- |
-| $grid-cols | 12 | Total columns in your grid |
-| $grid-container-gutter | 85% | Overall width of the grid |
-| $grid-max-width | 90em | Maximum width of the grid |
-| $grid-breakpoint | 47em | When mobile grid switches to desktop |
-| $grid-gutter | 1em | Gutter between each column |
-| $grid-container-expand | false | Expand containers to the full width on mobiles |
-| $grid-container-class | container | Classname of container elements |
-| $grid-row-class | row | Classname of rows elements |
-| $grid-col-class | col | Classname of column elements |
-| $grid-mobile-class | mobile | Prefix for all mobile classes |
-| $grid-mobile-cols | 4 | Number of mobile grid columns |
-| $grid-set-border-box | false | Set border-box on column elements |
+| **$grid-cols** | 12 | Total columns in your grid |
+| **$grid-container-gutter** | 85% | Overall width of the grid |
+| **$grid-max-width** | 90em | Maximum width of the grid |
+| **$grid-breakpoint** | 47em | When mobile grid switches to desktop |
+| **$grid-gutter** | 1em | Gutter between each column |
+| **$grid-container-expand** | false | Expand containers to the full width on mobiles |
+| **$grid-container-class** | container | Classname of container elements |
+| **$grid-row-class** | row | Classname of rows elements |
+| **$grid-col-class** | col | Classname of column elements |
+| **$grid-mobile-class** | mobile | Prefix for all mobile classes |
+| **$grid-mobile-cols** | 4 | Number of mobile grid columns |
+| **$grid-set-border-box** | false | Set border-box on column elements |
 
 ## Base Classes
 
@@ -52,9 +55,9 @@ Here are the variables you may modify with their default values:
 
 | Class | Extends | Description |
 | ----- | ------- | ----------- |
-| `.half-gutter` | Row | Renders all nested columns with half their gutter. |
-| `.collapse` | Row | Collapses all nested column gutters. |
-| `.centered` | Column | Centers a single column in a row. |
+| .half-gutter | Row | Renders all nested columns with half their gutter. |
+| .collapse | Row | Collapses all nested column gutters. |
+| .centered | Column | Centers a single column in a row. |
 
 ## Column Spans
 
@@ -91,7 +94,7 @@ Grid-It is a semantic grid, meaning that while it comes with every class needed 
 
 | Syntax | Description | Options |
 | ------ | ----------- | ------- |
-| @include grid-container; | Create a container. | none |
+| @include grid-container; | Create a container. | *none* |
 | @include grid-row( *opts* ); | Create a row. | $half-gutter: false <br> $collapse: false |
 | @include grid-col( **#**, *opts* ); | Create a column | **$columns: #** <br> $offset: 0 <br> $push: 0 <br> $pull: 0 <br> $centered: false <br> $half-gutter: false <br> $mobile-cols: 0 |
 | @include grid-classes( **#**, *opts* ); | Create a new grid w/ prepended name | **$num-cols: #** <br> $prepend: false |
