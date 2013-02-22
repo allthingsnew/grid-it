@@ -7,6 +7,8 @@ Grid-It is a CSS grid system built from the best practices of several other grid
 * Fixed Gutters Based on Font Size
 * Full Semantic Control
 
+To see Grid-It in action be sure to check out our [demo page](http://allthingsnew.github.com/grid-it/).
+
 ## Installation & Usage
 
 To get started do one of the following:
@@ -23,44 +25,20 @@ Grid-It comes highly configurable from the number of columns to gutters to the b
 
 Here are the variables you may modify with their default values:
 
-```scss
-// Number of columns in your grid
-$grid-cols: 12;
-
-// Overall width of the page in the browser
-$grid-container-gutter: 85%;
-
-// Maximum width of the page in the browser
-$grid-max-width: 80em;
-
-// Only built-in breakpoint of the grid (everything flattens)
-$grid-breakpoint: 47em;
-
-// Gutter between each column (negated on first and last columns)
-$grid-gutter: 1em;
-
-// Base class of the container element
-$grid-container-class: container;
-
-// Should containers expand to full-width on mobile
-$grid-container-expand: false;
-
-// Base class of each row
-$grid-row-class: row;
-
-// Base class of each column (is also pluralized)
-$grid-col-class: col;
-
-// Base class for mobile grid (is appended with -#)
-$grid-mobile-class: mobile;
-
-// Number of cols in mobile grid
-$grid-mobile-cols: 4;
-
-// Set box-sizing on column classes
-// If false, set globally
-$grid-set-border-box: false;
-```
+| Variable Name | Default Value | Description |
+| ------------- | ------------- | ----------- |
+| $grid-cols | 12 | Total columns in your grid |
+| $grid-container-gutter | 85% | Overall width of the grid |
+| $grid-max-width | 90em | Maximum width of the grid |
+| $grid-breakpoint | 47em | When mobile grid switches to desktop |
+| $grid-gutter | 1em | Gutter between each column |
+| $grid-container-expand | false | Expand containers to the full width on mobiles |
+| $grid-container-class | container | Classname of container elements |
+| $grid-row-class | row | Classname of rows elements |
+| $grid-col-class | col | Classname of column elements |
+| $grid-mobile-class | mobile | Prefix for all mobile classes |
+| $grid-mobile-cols | 4 | Number of mobile grid columns |
+| $grid-set-border-box | false | Set border-box on column elements |
 
 ## Base Classes
 
@@ -70,18 +48,17 @@ $grid-set-border-box: false;
 
 *Note: these will match the names set in the variables above.*
 
-**Row Extensions**
+**Extensions**
 
-* `.half-gutter`: Renders all nested columns with half their gutter.
-* `.collapse`: Collapses all nested column gutters. (affects only columns with base column class)
+| Class | Extends | Description |
+| ----- | ------- | ----------- |
+| `.half-gutter` | Row | Renders all nested columns with half their gutter. |
+| `.collapse` | Row | Collapses all nested column gutters. |
+| `.centered` | Column | Centers a single column in a row. |
 
-**Column Extensions**
+## Column Spans
 
-* `.centered`: Used with a single column to center it within a row.
-
-## Base Column Sizes
-
-Column number classes from `.one` to as many as `.twentyfour` or whatever `$grid-cols` is set to. This would be used like so:
+Grid-It creates number classes from `.one` to as many as `.twentyfour`. They stop at what `$grid-cols` is set to. Their use is straightforward:
 
 ```html
 <div class="row">
@@ -92,90 +69,60 @@ Column number classes from `.one` to as many as `.twentyfour` or whatever `$grid
 
 ## Offsets
 
-If the case that you want to offset your columns by `x` number of columns you may use offset classes. These range from `.offset-1` up to `.offset-24` (or whatever `$grid-cols` is set to).
+Grid-It makes offsetting your columns a cinch. Provided are offest classes that range from `.offset-1` up to `.offset-24`. Again, these are capped off at the number set in `$grid-cols` to save space in your css file.
 
 ## Source Ordering
 
-If when you want to rearrange the order of columns independent of the markup use push and pull. These are just like offset in syntax, again ranging from `.push-1` and `.pull-1` to `.push-24` and `.pull-24`, ending at `$grid-cols`.
+Every now and then we need to rearrange the order of columns independent of the markup. This is why Grid-It provides push and pull classes. These are just like offset in syntax, again ranging from `.push-1` and `.pull-1` to `.push-24` and `.pull-24`, ending at `$grid-cols`.
 
 ## Mobile
 
-Mobile classes are provided to produce a grid on mobile/handheld devices. Otherwise, grid columns are collapsed vertically. Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set the mobile grid to.
+How about a grid on mobile/handheld devices? You got it! Mobile classes are made up of the mobile class set in the above variables and number words like: `.mobile-one` to `.mobile-four` or whatever number of columns you set in `$grid-mobile-cols`.
 
-You may also use mobile offsets and source ordering in the same manner as above. Mobile versions are prepended, like the number classes, with `mobile-` so these classes are like: `.mobile-offset-3`, `.mobile-push-4`, and `.mobile-pull-8`.
+You may also use mobile offsets and source ordering in the same manner described above. Mobile classes are prepended, like the number classes, with `.mobile-` (see `$grid-mobile-class`) so these classes are like: `.mobile-offset-3`, `.mobile-push-4`, and `.mobile-pull-8`.
 
 From time to time different column groups are also needed between mobile and desktop grids. For this reason `.mobile-row` is provided. This is a class given to elements that wrap mobile columns and looks like a row on mobile but becomes lax on after the grid breakpoint. Nest these elements within common rows to achieve complex grid grouping.
 
 ## Semantics
 
-Grid-It is a semantic grid, meaning that while it comes packed with every class needed you can use it's own mixins library to tell any element to look like a grid component. Use them as follows:
+Grid-It is a semantic grid, meaning that while it comes with every class needed out of the box it's built atop a library of mixins you can use to tell any element to look like a grid component.
 
-```scss
-// Create a container out of any element.
+### Mixins
 
-@include grid-container;
+| Syntax | Description | Options |
+| ------ | ----------- | ------- |
+| @include grid-container; | Create a container. | none |
+| @include grid-row( *opts* ); | Create a row. | $half-gutter: false <br> $collapse: false |
+| @include grid-col( **#**, *opts* ); | Create a column | **$columns: #** <br> $offset: 0 <br> $push: 0 <br> $pull: 0 <br> $centered: false <br> $half-gutter: false <br> $mobile-cols: 0 |
+| @include grid-classes( **#**, *opts* ); | Create a new grid w/ prepended name | **$num-cols: #** <br> $prepend: false |
 
-
-// Create a row out of any element.
-// @param {bool} $half-gutter Cut the gutter on each column within in half (acts on all direct decendents)
-// @param {bool} $collapse Remove the gutter on columns completely
-// @param {bool} $has-mobile Whether or not the row contains mobile columns
-
-@include grid-row();
-
-
-// Create a column out of any element.
-// @param {num} $columns Number of columns the element should span (required)
-// @param {num} $offset Number of columns the element should be offset by
-// @param {num} $push Push the element by x number of columns
-// @param {num} $pull Pull the element by x number of columns
-// @param {bool} $centered Center the column in the row (there should only be one)
-// @param {bool} $half-gutter Use only a half gutter on this specific column
-// @param {num} $mobile-cols Number of columns to span on mobile, if any
-
-@include grid-col($columns);
-
-
-// Create column widths, offset, push, and pull classes within a given context.
-// @param {num} $num-cols The number of columns to build classes to (required)
-// @param {string} $prepend A name to prepend to each grid class (a '-' separates this from the class name)
-
-@include grid-classes($num-cols) {
-    // any styles here are appended to each number class in the grid
-}
-```
+__*Required arguments in bold type.__
 
 **Tip**: Use [named arguments](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#keyword_arguments) to make including much easier.
 
-## Semantic Media Queries
+### Grid Classes
 
-You may extend the grid breakpoint included here by creating your own media queries and then building the grid classes within those queries using different grid schemas. To accomplish this utilize the `grid-classes` mixin like so:
+To extend the single breakpoint built into Grid-It use the mixin `grid-classes()` within a media query. You can overwrite the grid at this new breakpoint or supply an alternative grid system by giving the mixin a prepend name as its secondary parameter. For example:
 
 ```scss
-// Creates a new 16-column grid with classes ranging from .bp2-one to .bp2-sixteen
 @media only screen and (min-width: 60em) {
     @include grid-classes(16, bp2);
 }
 ```
 
-## Functions & Mixins
+This creates a new 16-column grid effective at min-width: 60em with classes prepended with `.bp2-` like `.bp2-one`, `.bp2-pull-3`, `.bp2-offset-6`, etc.
 
-You can use the funtion `gridCalc()` anywhere you need to in your scss files. It is used as follows:
+## Functions
 
-```scss
-// Calculate the percentage width by column span.
-// @param  {num} $colNumber The number of columns to span
-// @param  {num} (optional) $totalColumns The number to divide into (defaults to $grid-cols)
-// @return {num} CSS Percentage
-
-gridCalc($colNumber, $totalColumns: $grid-cols);
-```
-
-Also provided is a mixin to clearfix elements. Simply use it like:
+The funtion `gridCalc()` is provided to be used anywhere you need to calculate the percentage of a span within a given number of columns. The first argument is required. The second argument defaults to `$grid-cols`. For example:
 
 ```scss
-@include clearfix;
+header {
+    width: gridCalc(4, 16);  // 25%
+}
 ```
+
+We've also included a helper clearfix mixin used like `@include clearfix;`. It simply clears the height of anything that contains floated elements.
 
 ## Browser Compatibility
 
