@@ -10,7 +10,21 @@ Grid-It is a CSS3 grid system built from the best practices of several other gri
 * Full Semantic Control
 * Extendable Grids
 
-To see Grid-It in action be sure to check out our [demo page](http://allthingsnew.github.com/grid-it/).
+To see Grid-It in action be sure to check out the [demo page](http://allthingsnew.github.com/grid-it/).
+
+## Table of Contents
+
+* [Installation & Usage](#installation--usage)
+* [Variables](#variables)
+* [Base Classes](#base-classes)
+* [Column Spans](#column-spans)
+* [Offsets](#offsets)
+* [Source Ordering](#source-ordering)
+* [Mobile](#mobile)
+* [Semantics](#semantics)
+* [Functions](#functions)
+* [Browser Compatibility](#browser-compatibility)
+* [Copyright & Licenses](#copyright--licenses)
 
 ## Installation & Usage
 
